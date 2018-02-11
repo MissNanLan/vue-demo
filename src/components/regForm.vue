@@ -28,7 +28,7 @@
         <div class="g-form-line">
           <span class="g-form-label">密码：</span>
           <div class="g-form-input" >
-            <input type="password"  v-validate="'required|password'" id="password" name="myPassWord"  placeholder="请输入密码" >
+            <input type="password"  v-validate="'required|password|confirmed:pwd_confirmed'" id="password" name="myPassWord"  placeholder="请输入密码" >
           </div>
           <span v-show="errors.has('myPassWord')" class="help is-danger">{{ errors.first('myPassWord')}}</span>
         </div>
@@ -36,7 +36,7 @@
         <div class="g-form-line">
           <span class="g-form-label">确认密码：</span>
           <div class="g-form-input" >
-            <input type="password"  placeholder="请输入确认密码" >
+            <input type="password" v-validate="'confirmed:myPassWord'" placeholder="请输入确认密码" name="pwd_confirmed">
           </div>
          
         </div>
